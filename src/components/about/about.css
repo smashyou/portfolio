@@ -62,6 +62,8 @@
 .about__card small {
   font-size: 0.7rem;
   color: var(--color-light);
+  padding-top: 1rem;
+  display: block;
 }
 
 .about__content p {

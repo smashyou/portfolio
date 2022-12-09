@@ -26,6 +26,9 @@
   display: block;
   width: 80%;
   margin: 0.8rem auto 0;
+  height: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
