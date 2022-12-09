@@ -68,10 +68,10 @@ const Portfolio = () => {
               </div>
               <h3>This is a portfolio item title</h3>
               <div className="portfolio__item-cta">
-                <a href={github} className="btn" target="/#">
+                <a href={github} className="btn" target="/">
                   GitHub
                 </a>
-                <a href={demo} className="btn btn-primary" target="/#">
+                <a href={demo} className="btn btn-primary" target="/">
                   Live Demo
                 </a>
               </div>
