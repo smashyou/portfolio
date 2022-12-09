@@ -71,7 +71,7 @@ const CTA = () => {
           Show Resume
         </a>
         <a href="#contact" className="btn btn-primary">
-          Let's Talk
+          Contact me
         </a>
       </div>
     </>
