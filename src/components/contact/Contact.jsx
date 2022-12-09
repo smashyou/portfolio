@@ -1,23 +1,23 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 
 const contact = () => {
-  const form = useRef(null);
+  // const form = useRef(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
-    emailjs.sendForm(
-      "service_17b0hvb",
-      "template_1ezstgj",
-      form.current,
-      "XIiAa-6pHZUiaHqFw"
-    );
-  };
+  //   emailjs.sendForm(
+  //     "service_17b0hvb",
+  //     "template_1ezstgj",
+  //     form.current,
+  //     "XIiAa-6pHZUiaHqFw"
+  //   );
+  // };
 
   return (
     <section id="contact">
@@ -56,7 +56,7 @@ const contact = () => {
           </article>
         </div>
         {/* END OF CONTACT OPTIONS */}
-        <form ref={form} onSubmit={sendEmail}>
+        <form action="">
           <input
             type="text"
             name="name"
