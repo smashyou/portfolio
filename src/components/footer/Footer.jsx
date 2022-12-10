@@ -3,7 +3,8 @@ import "./footer.css";
 import { FaFacebookF } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
-const Footer = () => {
+
+const Footer = ({ setActiveNav }) => {
   return (
     <footer>
       <a href="/#" className="footer__logo">
@@ -12,16 +13,24 @@ const Footer = () => {
 
       <ul className="permalinks">
         <li>
-          <a href="/#">Home</a>
+          <a href="/#home" onClick={() => setActiveNav("#home")}>
+            Home
+          </a>
         </li>
         <li>
-          <a href="/#about">About</a>
+          <a href="/#about" onClick={() => setActiveNav("#about")}>
+            About
+          </a>
         </li>
         <li>
-          <a href="/#experience">Experience</a>
+          <a href="/#experience" onClick={() => setActiveNav("#experience")}>
+            Experience
+          </a>
         </li>
         <li>
-          <a href="/#services">Services</a>
+          <a href="/#services" onClick={() => setActiveNav("#services")}>
+            Services
+          </a>
         </li>
         <li>
           <a href="/#portfolio">Portfolio</a>
@@ -30,7 +39,9 @@ const Footer = () => {
           <a href="/#testimonials">Testimonials</a>
         </li>
         <li>
-          <a href="/#contact">Contact</a>
+          <a href="/#contact" onClick={() => setActiveNav("#contact")}>
+            Contact
+          </a>
         </li>
       </ul>
       <div className="footer__socials">

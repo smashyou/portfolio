@@ -5,7 +5,7 @@ import { FaAward } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa";
 import { ImBooks } from "react-icons/im";
 
-const about = () => {
+const about = ({ setActiveNav }) => {
   return (
     <section id="about">
       <h5>Get To Know</h5>
@@ -44,7 +44,11 @@ const about = () => {
             hic provident, cupiditate molestiae accusamus ducimus eos reiciendis
             ab aliquam aperiam!
           </p>
-          <a href="#contact" className="btn btn-primary">
+          <a
+            href="#contact"
+            onClick={() => setActiveNav("#contact")}
+            className="btn btn-primary"
+          >
             Contact me
           </a>
         </div>

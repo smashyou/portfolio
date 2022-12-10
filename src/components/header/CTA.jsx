@@ -51,7 +51,7 @@ const Modal = ({ onRequestClose }) => {
   );
 };
 
-const CTA = () => {
+const CTA = ({ setActiveNav }) => {
   const [isModalOpen, setModalIsOpen] = useState(false);
   console.log(useState("hello")[1]);
   const toggleModal = () => {
@@ -70,7 +70,11 @@ const CTA = () => {
         >
           Show Resume
         </a>
-        <a href="#contact" className="btn btn-primary">
+        <a
+          href="#contact"
+          onClick={() => setActiveNav("#contact")}
+          className="btn btn-primary"
+        >
           Contact me
         </a>
       </div>
