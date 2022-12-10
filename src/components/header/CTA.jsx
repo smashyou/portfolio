@@ -2,6 +2,7 @@ import React from "react";
 import "./modal.css";
 import Resume from "../../assets/resume_jy.pdf";
 
+// Call To Action Component
 const { useState, useEffect } = React;
 const Modal = ({ onRequestClose }) => {
   // Use useEffect to add an event listener to the document
