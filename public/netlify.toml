@@ -1,0 +1,4 @@
+[[redirects]]
+ from = "https://smashyou.github.io/portfolio""
+ to = "/index.html"
+ status = 200
