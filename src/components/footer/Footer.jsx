@@ -3,6 +3,7 @@ import "./footer.css";
 import { FaFacebookF } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import metadata from "../../../package.json";
 const Footer = () => {
   return (
     <footer>
@@ -46,6 +47,9 @@ const Footer = () => {
       </div>
       <div className="footer__copyright">
         <small>&copy; johnminryu.com All rights reserved</small>
+      </div>
+      <div className="footer__version">
+        <small>Version {metadata.version}</small>
       </div>
     </footer>
   );
