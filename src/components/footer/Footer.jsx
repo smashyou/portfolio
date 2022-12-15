@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import { FaFacebookF } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
 import { FiInstagram } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import metadata from "../../../package.json";
@@ -35,14 +35,14 @@ const Footer = () => {
         </li>
       </ul>
       <div className="footer__socials">
-        <a href="https://facebook.com" target="#">
-          <FaFacebookF />
-        </a>
-        <a href="https://instagram.com/johnminryu" target="#">
-          <FiInstagram />
+        <a href="https://linkedin.com/in/johnminryu" target="#">
+          <BsLinkedin />
         </a>
         <a href="https://github.com/smashyou" target="#">
           <FaGithub />
+        </a>
+        <a href="https://instagram.com/johnminryu" target="#">
+          <FiInstagram />
         </a>
       </div>
       <div className="footer__copyright">
