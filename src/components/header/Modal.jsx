@@ -44,6 +44,8 @@ const Modal = ({ onRequestClose }) => {
             title="Resume"
             src={`${Resume}#view=FitH`}
             frameBorder="0"
+            width={"100%"}
+            height={"100%"}
           ></iframe>
         </div>
         <div className="modal__cta">
