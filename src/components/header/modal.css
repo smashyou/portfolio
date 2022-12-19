@@ -11,27 +11,47 @@
   z-index: 1;
 }
 
-.modal__container {
-  background: rgb(77, 77, 77);
-  border-radius: 5px;
-  height: 80vh;
-  margin: 50px auto;
-  padding: 15px;
-  width: 90vh;
-  z-index: 2;
-}
-
 .modal__title {
   font-size: 18px;
   font-weight: 600;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal__container {
+  background: rgb(77, 77, 77);
+  border-radius: 5px;
+  height: 70vh;
+  margin: 50px auto;
+  padding: 15px;
+  width: 70vh;
+}
+
+#resume_iframe {
+  position: relative;
+  height: 80%;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.modal__object {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  padding-bottom: 1rem;
+  z-index: 3;
 }
 
 .modal__cta {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+}
+
+.modal__exit {
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
 }
 
 .modal__btn {
@@ -47,23 +67,6 @@
   transition: var(--transition);
 }
 
-.modal__exit {
-  font-size: 0.8rem;
-  padding-bottom: 1rem;
-}
-
-.modal__object {
-  height: 560px;
-  width: 100%;
-  padding-bottom: 1rem;
-  position: relative;
-}
-
-.modal__object iframe {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-}
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
 @media screen and (max-width: 1024px) {
   .modal__container {
