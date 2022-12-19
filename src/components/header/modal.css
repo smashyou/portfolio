@@ -27,20 +27,21 @@
   width: 70vh;
 }
 
-#resume_iframe {
+.modal__object {
   position: relative;
-  height: 80%;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 2;
+  overflow: hidden;
+  padding-top: 56.25%;
+  height: 55vh;
+  margin-bottom: 1rem;
 }
 
-.modal__object {
+#resume_iframe {
   position: absolute;
-  background-color: transparent;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding-bottom: 1rem;
-  z-index: 3;
+  height: 100%;
+  border: 0;
 }
 
 .modal__cta {

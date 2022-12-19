@@ -38,15 +38,14 @@ const Modal = ({ onRequestClose }) => {
     <div className="modal__backdrop">
       <div className="modal__container">
         <h3 className="modal__title">John Ryu's Resume</h3>
-        <iframe
-          id="resume_iframe"
-          title="jyresume"
-          src={Resume}
-          frameBorder="0"
-        >
-          <div className="modal__object"></div>
-        </iframe>
-
+        <div className="modal__object">
+          <iframe
+            id="resume_iframe"
+            title="jyresume"
+            src={Resume}
+            frameBorder="0"
+          ></iframe>
+        </div>
         <div className="modal__cta">
           <a
             ref={ref}
