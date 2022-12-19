@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
+// Call To Action Component
 const CTA = () => {
   const [isModalOpen, setModalIsOpen] = useState(false);
   const toggleModal = () => {
