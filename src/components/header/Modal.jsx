@@ -41,8 +41,8 @@ const Modal = ({ onRequestClose }) => {
         <div className="modal__object">
           <iframe
             id="resume_iframe"
-            title="jyresume"
-            src={Resume}
+            title="Resume"
+            src={`${Resume}#view=fitH`}
             frameBorder="0"
           ></iframe>
         </div>
