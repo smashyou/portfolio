@@ -1,23 +1,44 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
-const contact = () => {
-  // const form = useRef(null);
+const Contact = () => {
+  const form = useRef();
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //   emailjs.sendForm(
-  //     "service_17b0hvb",
-  //     "template_1ezstgj",
-  //     form.current,
-  //     "XIiAa-6pHZUiaHqFw"
-  //   );
-  // };
+    emailjs
+      .sendForm(
+        "service_17b0hvb",
+        "template_1ezstgj",
+        form.current,
+        "XIiAa-6pHZUiaHqFw"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          Swal.fire({
+            icon: "success",
+            title: "Message sent successfully!",
+            confirmButtonColor: "#4db5ff",
+          });
+        },
+        (error) => {
+          console.log(error.text);
+          Swal.fire({
+            icon: "error",
+            title: "Oops, something went wrong...",
+            text: error.text,
+            confirmButtonColor: "#4db5ff",
+          });
+        }
+      );
+  };
 
   return (
     <section id="contact">
@@ -53,7 +74,7 @@ const contact = () => {
           </article>
         </div>
         {/* END OF CONTACT OPTIONS */}
-        <form action="">
+        <form ref={form} onSubmit={sendEmail}>
           <input
             type="text"
             name="name"
@@ -81,4 +102,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
