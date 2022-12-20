@@ -38,6 +38,7 @@ const Contact = () => {
           });
         }
       );
+    form.current.reset();
   };
 
   return (
