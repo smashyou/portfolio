@@ -36,7 +36,8 @@
 }
 
 .service__list li {
-  display: flex;
+  display: block; /* Makes sure list items stack */
+  position: relative;
   gap: 1rem;
   margin-bottom: 0.8rem;
 }
@@ -44,12 +45,26 @@
 .service__list-icon {
   color: var(--color-primary);
   margin-top: 2px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 .service__list p {
   font-size: 0.9rem;
+  display: inline; /* Keeps text beside icon */
 }
 
+.service__sublist {
+  margin-left: 30px; /* Indents the sublist */
+  padding-left: 15px;
+  list-style: none; /* Removes default bullets */
+}
+
+.service__sublist li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
 @media screen and (max-width: 1024px) {
   .services__container {
