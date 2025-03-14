@@ -5,6 +5,7 @@ import Resume from "../../assets/resume_jy.pdf";
 const Modal = ({ onRequestClose }) => {
   const ref = useRef(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       onRequestClose();
@@ -27,7 +28,7 @@ const Modal = ({ onRequestClose }) => {
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [onRequestClose]);
+  }, [handleClickOutside, onRequestClose]);
 
   return (
     <div className="modal__backdrop">
