@@ -12,7 +12,7 @@ const data = [
   {
     id: 1,
     image: IMG1,
-    title: "Project 1",
+    title: "React.js Presentaion with Interactive Demos",
     github: "https://www.github.com/smashyou/reactjs-presentation",
     demo: "https://reactjs-presentation.vercel.app",
   },
@@ -67,7 +67,7 @@ const Portfolio = () => {
               <div className="portfolio__item-image">
                 <img src={image} alt={title} />
               </div>
-              <h3>This is a portfolio item title</h3>
+              <h3>{title}</h3>
               <div className="portfolio__item-cta">
                 <a href={github} className="btn" target="/">
                   GitHub
