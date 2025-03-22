@@ -12,7 +12,7 @@ const data = [
   {
     id: 1,
     image: IMG1,
-    title: "React.js Presentaion with Interactive Demos",
+    title: "React.js Presentation with Interactive Demos",
     github: "https://www.github.com/smashyou/reactjs-presentation",
     demo: "https://reactjs-presentation.vercel.app",
   },
