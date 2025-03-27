@@ -1,7 +1,7 @@
 import React from "react";
 import "./portfolio.css";
 import IMG1 from "../../assets/reactjs_ppt.png";
-import IMG2 from "../../assets/portfolio2.jpg";
+import IMG2 from "../../assets/jackpotteller.png";
 import IMG3 from "../../assets/portfolio3.jpg";
 import IMG4 from "../../assets/portfolio4.jpg";
 import IMG5 from "../../assets/portfolio5.png";
@@ -19,9 +19,9 @@ const data = [
   {
     id: 2,
     image: IMG2,
-    title: "Project 2",
-    github: "https://www.github.com/smashyou",
-    demo: "https://dribbble.com/shots/16580766-Orion-UI-kit-Charts-templates-infographics-in-Figma",
+    title: "Jackpot Teller: AI-Powered Jackpot Number Prediction",
+    github: "https://github.com/smashyou/AI_Jackpot_Generator",
+    demo: "https://www.jackpotteller.com",
   },
   {
     id: 3,
