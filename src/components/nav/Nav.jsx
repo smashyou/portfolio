@@ -5,6 +5,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
 import { BiMessageSquareDetail } from "react-icons/bi";
+import { PiDevicesLight } from "react-icons/pi";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("home");
@@ -55,6 +56,13 @@ const Nav = () => {
         className={activeNav === "services" ? "active" : ""}
       >
         <RiServiceLine />
+      </a>
+      <a
+        href="#portfolio"
+        onClick={() => setActiveNav("portfolio")}
+        className={activeNav === "portfolio" ? "active" : ""}
+      >
+        <PiDevicesLight />
       </a>
       <a
         href="#contact"
