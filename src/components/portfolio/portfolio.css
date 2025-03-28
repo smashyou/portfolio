@@ -1,15 +1,39 @@
-.portfolio__container {
+/* .portfolio__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+} */
+
+.portfolio__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
 }
 
-.portfolio__item {
+/* .portfolio__item {
   background: var(--color-bg-variant);
   padding: 1.3rem;
   border-radius: 2rem;
   border: 1px solid transparent;
   transition: var(--transition);
+} */
+
+.portfolio__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--color-bg-variant);
+  padding: 1.3rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: var(--transition);
+
+  width: calc((100% - 5rem) / 3);
+  max-width: 350px;
+  box-sizing: border-box;
+  min-height: 100%; /* ensure cards stretch equally */
 }
 
 .portfolio__item:hover {
@@ -23,7 +47,13 @@
 }
 
 .portfolio__item h3 {
+  margin: 1.2rem 0 1rem;
+}
+
+.portfolio__item h6 {
   margin: 1.2rem 0 2rem;
+  color: rgb(173, 165, 165);
+  flex-grow: 1; /* takes up remaining vertical space to push CTA down */
 }
 
 .portfolio__item-cta {
@@ -34,17 +64,29 @@
 }
 
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .portfolio__container {
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
   }
+} */
+
+@media screen and (max-width: 1024px) {
+  .portfolio__item {
+    width: calc((100% - 1.2rem) / 2); /* 2 items per row */
+  }
 }
 
 /* ==================== MEDIA QUERIES (SMALL DEVICES) ==================== */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .portfolio__container {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  .portfolio__item {
+    width: 100%; /* 1 item per row */
   }
 }
