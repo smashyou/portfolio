@@ -12,7 +12,14 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "experience", "services", "contact"];
+      const sections = [
+        "home",
+        "about",
+        "experience",
+        "services",
+        "portfolio",
+        "contact",
+      ];
       const scrollPos = window.scrollY + window.innerHeight / 2;
 
       sections.forEach((section) => {
