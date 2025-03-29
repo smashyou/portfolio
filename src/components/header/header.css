@@ -1,44 +1,22 @@
 header {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 7rem;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
 .header__container {
   text-align: center;
+  width: 100%;
   height: 100%;
   position: relative;
-}
-
-/* ================= CTA ================= */
-
-.cta {
-  margin-top: 2.5rem;
   display: flex;
-  gap: 1.2rem;
+  flex-direction: column;
   justify-content: center;
 }
 
-/* ================= SOCIALS ================= */
-
-.header__socials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  position: absolute;
-  left: 0;
-  bottom: 3rem;
-}
-
-.header__socials::after {
-  content: "";
-  width: 1px;
-  height: 2rem;
-  background: var(--color-primary);
-}
-
-/* ================= ME ================= */
+/* ...existing styles... */
 
 .me {
   background: linear-gradient(var(--color-primary), transparent);
@@ -47,16 +25,13 @@ header {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  /* left: calc(50%-11rem); */
   margin-top: 4rem;
   border-radius: 12rem 12rem 0 0;
   overflow: hidden;
-  /* padding: 5rem 1.5rem 1.5rem 1.5rem; */
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem;
 }
 
-/* ================= SCROLL DOWN ================= */
-
+/* SCROLL DOWN */
 .scroll__down {
   position: absolute;
   right: -2.3rem;
@@ -68,23 +43,43 @@ header {
 
 /* ================= MEDIA QUERIES (MEDIUM DEVICES) ================= */
 @media screen and (max-width: 1024px) {
-  /* .container {
-    background: red;
-  } */
   header {
-    height: 68vh;
+    min-height: 100vh;
+  }
+
+  .me {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+  }
+
+  .header__container {
+    justify-content: flex-start;
+    padding-bottom: 2rem;
   }
 }
 
 /* ================= MEDIA QUERIES (SMALL DEVICES) ================= */
 @media screen and (max-width: 600px) {
   header {
-    height: 100vh;
+    min-height: 100vh;
   }
 
-  /* do not show socials and scroll down text on mobile phones */
+  .me {
+    width: 18rem;
+    height: auto;
+    margin-top: 2rem;
+    position: static;
+    transform: none;
+  }
+
   .header__socials,
   .scroll__down {
     display: none;
+  }
+
+  .header__container {
+    padding: 1rem;
+    justify-content: flex-start;
   }
 }
