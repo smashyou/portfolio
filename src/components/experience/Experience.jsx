@@ -1,200 +1,135 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./experience.css";
 import { BsPatchCheckFill } from "react-icons/bs";
 
-const experience = () => {
+const Experience = () => {
+  const scrollRefs = useRef([]);
+  const [isScrollAtBottom, setScrollAtBottom] = useState([]);
+
+  useEffect(() => {
+    const refs = scrollRefs.current; // Stable snapshot
+
+    const updateFade = () => {
+      const updated = refs.map((ref) => {
+        if (!ref) return false;
+        const { scrollTop, scrollHeight, clientHeight } = ref;
+
+        // If not scrollable OR at the bottom
+        const isNotScrollable = scrollHeight <= clientHeight;
+        const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+
+        return isNotScrollable || isAtBottom;
+      });
+      setScrollAtBottom(updated);
+    };
+
+    refs.forEach((ref) => {
+      if (ref) {
+        ref.addEventListener("scroll", updateFade);
+      }
+    });
+
+    // Trigger it once on mount to evaluate short content
+    updateFade();
+
+    return () => {
+      refs.forEach((ref) => {
+        if (ref) {
+          ref.removeEventListener("scroll", updateFade);
+        }
+      });
+    };
+  }, []);
+
+  const categories = [
+    {
+      title: "Frontend Development",
+      skills: [
+        { name: "HTML", level: "Experienced" },
+        { name: "CSS", level: "Experienced" },
+        { name: "JavaScript", level: "Experienced" },
+        { name: "Bootstrap", level: "Experienced" },
+        { name: "React/Next.js", level: "Intermediate" },
+        { name: "Tailwind CSS", level: "Intermediate" },
+      ],
+    },
+    {
+      title: "AI / Backend Development",
+      skills: [
+        { name: "Java", level: "Experienced" },
+        { name: "Spring Boot", level: "Intermediate" },
+        { name: "PHP", level: "Intermediate" },
+        { name: "Node JS", level: "Intermediate" },
+        { name: "Python", level: "Intermediate" },
+        { name: "Flask", level: "Intermediate" },
+        { name: "PyTorch", level: "Pre-intermdiate" },
+        {
+          name: "NoSQL",
+          level: "Intermediate",
+          extra: "Amazon DynamoDB, MongoDB, Apache Cassandra",
+        },
+        {
+          name: "Relational DB",
+          level: "Experienced",
+          extra: "SQL, PostgreSQL, MySQL",
+        },
+      ],
+    },
+    {
+      title: "Cloud / DevOps",
+      skills: [
+        { name: "Docker", level: "Experienced" },
+        { name: "Kubernetes", level: "Intermediate" },
+        {
+          name: "AWS",
+          level: "Intermediate",
+          extra: "EKS, ECR, Route 53, ACM",
+        },
+        { name: "GitHub Actions", level: "Intermediate" },
+      ],
+    },
+  ];
+
   return (
     <section id="experience">
       <h5>My Tools </h5>
       <h2>My Experience</h2>
 
-      <div className="container experience__container">
-        {/* FRONTEND DEVELOPMENT */}
-        <div className="experience__category experience__frontend">
-          <h3>Frontend Development</h3>
-          <div className="experience__scroll-wrapper">
-            <div className="experience__scroll-content">
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>HTML</h4>
-                  <small className="text-light">Experienced</small>
+      <div className="experience__outer">
+        <div className="experience__container">
+          {categories.map((cat, index) => (
+            <div key={index} className="experience__wrapper">
+              <div className="experience__category">
+                <h3>{cat.title}</h3>
+              </div>
+              <div
+                className="experience__scrollable"
+                ref={(el) => (scrollRefs.current[index] = el)}
+              >
+                <div className="experience__scroll-content">
+                  {cat.skills.map((skill, idx) => (
+                    <article className="experience__details" key={idx}>
+                      <BsPatchCheckFill className="experience__details-icon" />
+                      <div>
+                        <h4>{skill.name}</h4>
+                        {skill.extra && <h6>{skill.extra}</h6>}
+                        <small className="text-light">{skill.level}</small>
+                      </div>
+                    </article>
+                  ))}
                 </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>CSS</h4>
-                  <small className="text-light">Experienced</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>JavaScript</h4>
-                  <small className="text-light">Experienced</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Bootstrap</h4>
-                  <small className="text-light">Experienced</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>React/Next.js</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Tailwind CSS</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
+                <div
+                  className={`experience__fade-indicator ${
+                    isScrollAtBottom[index] ? "hidden" : ""
+                  }`}
+                />
+              </div>
             </div>
-          </div>
-          {/* Fade sits here outside scrollable div */}
-          <div className="experience__fade-indicator"></div>
-        </div>
-
-        {/* AI / BACKEND DEVELOPMENT */}
-        <div className="experience__category experience__backend">
-          <h3>AI / Backend Development</h3>
-          <div className="experience__scroll-wrapper">
-            <div className="experience__scroll-content">
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Java</h4>
-                  <small className="text-light">Experienced</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Spring Boot</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>PHP</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Node JS</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Python</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Flask</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>PyTorch</h4>
-                  <small className="text-light">Pre-intermdiate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>NoSQL</h4>
-                  <h6>Amazon DynamoDB, MongoDB, Apache Cassandra</h6>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Relational DB</h4>
-                  <h6>SQL, PostgreSQL, MySQL</h6>
-                  <small className="text-light">Experienced</small>
-                </div>
-              </article>
-            </div>
-          </div>
-          {/* Fade sits here outside scrollable div */}
-          <div className="experience__fade-indicator"></div>
-        </div>
-        {/* Cloud / DevOps */}
-        <div className="experience__category experience__clouddevops">
-          <h3>Cloud / DevOps</h3>
-          <div className="experience__scroll-wrapper">
-            <div className="experience__scroll-content">
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Docker</h4>
-                  <small className="text-light">Experienced</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>Kubernetes</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>AWS</h4>
-                  <h6>EKS, ECR, Route 53, ACM</h6>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-
-              <article className="experience__details">
-                <BsPatchCheckFill className="experience__details-icon" />
-                <div>
-                  <h4>GitHub Actions</h4>
-                  <small className="text-light">Intermediate</small>
-                </div>
-              </article>
-            </div>
-          </div>
-          {/* Fade sits here outside scrollable div */}
-          <div className="experience__fade-indicator"></div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default experience;
+export default Experience;

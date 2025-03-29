@@ -67,36 +67,67 @@
   display: block;
 }
 
+.about__text-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.about__fade-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-variant));
+  pointer-events: none;
+  z-index: 1;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.about__fade-indicator.hidden {
+  opacity: 0;
+}
+
 .about__content p {
   margin: 2rem 0 2.6rem;
   color: var(--color-light);
 }
 
 .about__text-scroll {
-  max-height: 300px;
+  max-height: 320px;
   overflow-y: auto;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-
+  padding: 1rem;
   background: var(--color-bg-variant);
   border: 1px solid transparent;
   border-radius: 1rem;
   transition: var(--transition);
+  scrollbar-gutter: stable; /* Prevent layout shift */
+  position: relative;
+  clip-path: inset(
+    0 round 1rem
+  ); /* This clips the scrollbar inside the border radius */
 }
 
-/* Optional: matching hover effect */
 .about__text-scroll:hover {
-  border-color: var(--color-primary-variant);
+  background: transparent;
+  border: 1px solid var(--color-primary-variant);
 }
 
-/* Scrollbar styling (optional) */
+/* Scrollbar Styling */
 .about__text-scroll::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  display: block !important;
 }
 
 .about__text-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-primary-variant);
-  border-radius: 3px;
+  background: var(--color-primary);
+  border-radius: 8px;
+}
+
+.about__text-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* ================= MEDIA QUERIES (MEDIUM DEVICES) ================= */
@@ -114,6 +145,44 @@
   }
   .about__text-scroll {
     max-height: 250px;
+  }
+  .about__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about__card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 0.8rem;
+  }
+
+  .about__icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-bottom: 0; /* remove top spacing for stacked layout */
+  }
+
+  .about__card h5 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .about__card small {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    display: block;
+    color: var(--color-light);
+  }
+
+  .about__card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -136,5 +205,43 @@
   }
   .about__text-scroll {
     max-height: 200px;
+  }
+  .about__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about__card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 0.8rem;
+  }
+
+  .about__icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    margin-bottom: 0; /* remove top spacing for stacked layout */
+  }
+
+  .about__card h5 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .about__card small {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    display: block;
+    color: var(--color-light);
+  }
+
+  .about__card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

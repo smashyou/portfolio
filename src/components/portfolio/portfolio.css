@@ -1,23 +1,9 @@
-/* .portfolio__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-} */
-
 .portfolio__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2.5rem;
 }
-
-/* .portfolio__item {
-  background: var(--color-bg-variant);
-  padding: 1.3rem;
-  border-radius: 2rem;
-  border: 1px solid transparent;
-  transition: var(--transition);
-} */
 
 .portfolio__item {
   display: flex;
@@ -31,7 +17,7 @@
   transition: var(--transition);
 
   width: calc((100% - 5rem) / 3);
-  max-width: 350px;
+  max-width: 480px;
   box-sizing: border-box;
   min-height: 100%; /* ensure cards stretch equally */
 }
@@ -64,27 +50,19 @@
 }
 
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
-/* @media screen and (max-width: 1024px) {
-  .portfolio__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-  }
-} */
-
 @media screen and (max-width: 1024px) {
   .portfolio__item {
     width: calc((100% - 1.2rem) / 2); /* 2 items per row */
   }
 }
 
-/* ==================== MEDIA QUERIES (SMALL DEVICES) ==================== */
-/* @media screen and (max-width: 600px) {
-  .portfolio__container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+@media screen and (max-width: 768px) {
+  .portfolio__item {
+    width: 100%; /* 2 items per row */
   }
-} */
+}
 
+/* ==================== MEDIA QUERIES (SMALL DEVICES) ==================== */
 @media screen and (max-width: 600px) {
   .portfolio__item {
     width: 100%; /* 1 item per row */
