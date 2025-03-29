@@ -39,7 +39,7 @@ const Modal = ({ onRequestClose }) => {
             id="resume_iframe"
             title="Resume"
             src={`${Resume}#toolbar=0&navpanes=0&scrollbar=0`}
-          ></iframe>
+          />
         </div>
         <div className="modal__cta">
           <button className="modal__btn" onClick={onRequestClose}>
