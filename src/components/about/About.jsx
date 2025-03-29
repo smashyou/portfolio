@@ -38,32 +38,34 @@ const about = () => {
               <small>Consuming knowledge is my hobby</small>
             </article>
           </div>
-          <p>
-            John Ryu is a software engineer and aspiring Entrepreneur with a
-            proven track record of turning innovative ideas into impactful
-            products. After earning his Bachelor of Science in Computer Science
-            from Temple University, he dove headfirst into roles at both
-            startups and major tech companies, including Comcast, where he
-            helped develop the Xfinity Flex streaming platform and enhance the
-            cloud-based X1 Guide interface for millions of customers. Alongside
-            these industry achievements, John has also launched his own
-            e-commerce venture and led multiple cross-functional projects,
-            consistently demonstrating a can-do attitude, grit, and a relentless
-            drive for learning new technologies.
-          </p>
-          <p>
-            Guided by the mindset of a “student of life,” John embodies the
-            principle of lifelong learning, taking joy in every opportunity to
-            acquire new skills and tackle fresh challenges. He believes in
-            “being the energy you want to attract,” maintaining a positive,
-            growth-oriented perspective to inspire collaboration and innovation
-            within his teams. His personal mantra—“make sure the choices you
-            make are worth the losses you will take”—reflects his commitment to
-            thoughtful decision-making and resilience. By merging technical
-            expertise with a genuine passion for continuous improvement, John
-            strives to create solutions that positively impact businesses and
-            end-users alike.
-          </p>
+          <div className="about__text-scroll">
+            <p>
+              John Ryu is a software engineer and aspiring Entrepreneur with a
+              proven track record of turning innovative ideas into impactful
+              products. After earning his Bachelor of Science in Computer
+              Science from Temple University, he dove headfirst into roles at
+              both startups and major tech companies, including Comcast, where
+              he helped develop the Xfinity Flex streaming platform and enhance
+              the cloud-based X1 Guide interface for millions of customers.
+              Alongside these industry achievements, John has also launched his
+              own e-commerce venture and led multiple cross-functional projects,
+              consistently demonstrating a can-do attitude, grit, and a
+              relentless drive for learning new technologies.
+            </p>
+            <p>
+              Guided by the mindset of a “student of life,” John embodies the
+              principle of lifelong learning, taking joy in every opportunity to
+              acquire new skills and tackle fresh challenges. He believes in
+              “being the energy you want to attract,” maintaining a positive,
+              growth-oriented perspective to inspire collaboration and
+              innovation within his teams. His personal mantra—“make sure the
+              choices you make are worth the losses you will take”—reflects his
+              commitment to thoughtful decision-making and resilience. By
+              merging technical expertise with a genuine passion for continuous
+              improvement, John strives to create solutions that positively
+              impact businesses and end-users alike.
+            </p>
+          </div>
           <a href="#contact" className="btn btn-primary">
             Contact me
           </a>

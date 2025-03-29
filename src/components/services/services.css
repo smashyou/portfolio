@@ -1,15 +1,24 @@
 .services__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 3rem;
 }
 
 .service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background: var(--color-bg-variant);
   border-radius: 0.8rem 0.8rem 2rem 2rem;
   border: 1px solid var(--color-primary);
-  height: fit-content;
+  flex: 1 1 30%; /* 3 cards per row */
+  min-width: 300px;
+  max-width: 400px;
+  height: 100%;
   transition: var(--transition);
+  position: relative;
 }
 
 .service:hover {
@@ -33,6 +42,8 @@
 
 .service__list {
   padding: 2rem;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .service__list li {
@@ -42,11 +53,66 @@
   margin-bottom: 0.8rem;
 }
 
-.service__list-icon {
+.service__scroll-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Optional styled scrollbar */
+.service__scroll-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.service__scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.service__fade-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-variant));
+  pointer-events: none;
+  z-index: 2;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  overflow: hidden;
+}
+
+/* .service__list-icon {
   color: var(--color-primary);
   margin-top: 2px;
   vertical-align: middle;
   margin-right: 8px;
+} */
+
+/* .service__sublist li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text
+} */
+
+.service__list-icon,
+.service__sublist-icon {
+  color: var(--color-primary);
+  font-size: 1rem; /* Normalize icon size */
+  flex-shrink: 0;
+}
+
+/* Sublist styling */
+.service__sublist li {
+  display: flex;
+  align-items: flex-start; /* Align top for multi-line text */
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service__sublist-icon {
+  margin-top: 0.2rem; /* Optional nudge for alignment */
 }
 
 .service__list p {
@@ -60,11 +126,6 @@
   list-style: none; /* Removes default bullets */
 }
 
-.service__sublist li {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between icon and text */
-}
 /* ==================== MEDIA QUERIES (MEDIUM DEVICES) ==================== */
 @media screen and (max-width: 1024px) {
   .services__container {

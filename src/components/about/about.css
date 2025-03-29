@@ -33,6 +33,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .about__card {
@@ -71,20 +72,48 @@
   color: var(--color-light);
 }
 
+.about__text-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+
+  background: var(--color-bg-variant);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  transition: var(--transition);
+}
+
+/* Optional: matching hover effect */
+.about__text-scroll:hover {
+  border-color: var(--color-primary-variant);
+}
+
+/* Scrollbar styling (optional) */
+.about__text-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about__text-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-primary-variant);
+  border-radius: 3px;
+}
+
 /* ================= MEDIA QUERIES (MEDIUM DEVICES) ================= */
 @media screen and (max-width: 1024px) {
   .about__container {
     grid-template-columns: 1fr;
     gap: 0;
   }
-
   .about__me {
     width: 50%;
     margin: 2rem auto 4rem;
   }
-
   .about__container p {
     margin: 1rem 0 1.5rem;
+  }
+  .about__text-scroll {
+    max-height: 250px;
   }
 }
 
@@ -94,17 +123,18 @@
     width: 65%;
     margin: 0 auto 3rem;
   }
-
   .about__cards {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    margin-bottom: 1.5rem;
   }
-
   .about__content {
     text-align: center;
   }
-
   .about__content p {
     margin: 1.5rem 0;
+  }
+  .about__text-scroll {
+    max-height: 200px;
   }
 }
