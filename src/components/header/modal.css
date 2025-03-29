@@ -95,7 +95,7 @@
 @media screen and (max-width: 600px) {
   .modal__container {
     width: var(--container-width-sm);
-    max-height: 60vh;
+    max-height: 80vh;
   }
 
   .modal__btn {
