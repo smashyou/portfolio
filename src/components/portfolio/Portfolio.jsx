@@ -2,7 +2,7 @@ import React from "react";
 import "./portfolio.css";
 import IMG1 from "../../assets/reactjs_ppt.png";
 import IMG2 from "../../assets/jackpotteller.png";
-// import IMG3 from "../../assets/portfolio3.jpg";
+import IMG3 from "../../assets/cosmic_kitchen.png";
 // import IMG4 from "../../assets/portfolio4.jpg";
 // import IMG5 from "../../assets/portfolio5.png";
 // import IMG6 from "../../assets/portfolio6.jpg";
@@ -27,14 +27,15 @@ const data = [
     github: "https://github.com/smashyou/AI_Jackpot_Generator",
     demo: "https://www.jackpotteller.com",
   },
-  // {
-  //   id: 3,
-  //   image: IMG3,
-  //   title: "Project 3",
-  //   subtitle: "Project 3",
-  //   github: "https://www.github.com/smashyou",
-  //   demo: "https://dribbble.com/shots/17290917-Eclipse-Figma-dashboard-UI-kit-for-data-design-web-apps",
-  // },
+  {
+    id: 3,
+    image: IMG3,
+    title: "Cosmic Kitchen: Kubernetes Presentation",
+    subtitle:
+      "Explaining Kubernetes with Cosmic Kitchen Analogy featuring interactive demos",
+    github: "https://www.github.com/smashyou/kubernetes_presentation",
+    demo: "https://k8s-presentation.vercel.app",
+  },
   // {
   //   id: 4,
   //   image: IMG4,
